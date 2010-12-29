@@ -16,6 +16,22 @@ module NavigationHelpers
     #
     #   when /^(.*)'s profile page$/i
     #     user_profile_path(User.find_by_login($1))
+    
+    when /path "(.+)"/
+      "#{$1}"
+      
+    when /the show page for (.+)/  
+      model_name = $1
+      if /that .*/.match(model_name)
+        model_name = model_name.split('that ')[1]
+        model = model_name.camelize.constantize.last
+      end
+      polymorphic_path(model)  
+
+    when /the index page for (.+)/  
+      model_name = $1.gsub(' ', '_')
+      polymorphic_path(model_name)  
+
 
     else
       begin

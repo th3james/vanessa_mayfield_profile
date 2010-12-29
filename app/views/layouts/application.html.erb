@@ -1,14 +1,31 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>VanessaMayfieldProfile</title>
+  <title>Vanessa Mayfield - Online Portfolio</title>
   <%= stylesheet_link_tag :all %>
   <%= javascript_include_tag :defaults %>
   <%= csrf_meta_tag %>
 </head>
 <body>
+  <div class="container clearfix">
+    <div class="header grid_12">
+      <h1>Vanessa Mayfield - Online Portfolio</h1>
+    </div>
+    <div class="navigation grid_12">
+      <ul class="menu grid_12">
+        <li class="grid_4"><%= link_to "News", '#' %></li>
+        <li class="grid_4"><%= link_to "Portfoliio", '#' %></li>
+        <li class="grid_4"><%= link_to "Links", '#' %></li>
+        <% if current_user %>
+          <li class="grid_4"><%= link_to "Logout", logout_path %></li>
+        <% end %>
+      </ul>
+    </div>
 
-<%= yield %>
-
+    <div class="main_content grid_12">
+      <%= yield %>
+    </div>
+  </div>
+  
 </body>
 </html>

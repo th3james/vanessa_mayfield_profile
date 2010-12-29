@@ -1,5 +1,12 @@
 VanessaMayfieldProfile::Application.routes.draw do
+
+  root :to => "posts#index"
+
+  match 'login' => 'user_sessions#new'
+  match 'logout' => 'user_sessions#destroy'
+
   resources :posts
+  resources :user_sessions
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
