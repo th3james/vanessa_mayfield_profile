@@ -10,7 +10,7 @@ h1 {
   font-family: "Lucida Console";
 
   border-bottom: solid 1px #01939A;
-  padding-bottom: 5px;
+  padding-bottom: 7px;
 }
 
 div.container {
@@ -65,9 +65,11 @@ ul.menu a{
 ul.menu a:hover, a.selected{
 }
 
-div.navigation {
+div.content_container {
+  background-color: #EEE;
+  padding-top: 20px;
 }
 
-div.main_content {
-  background-color: #EEE;
+div.side_panel {
+  border: solid 1px black;
 }
