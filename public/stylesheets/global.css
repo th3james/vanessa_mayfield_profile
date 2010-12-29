@@ -1,0 +1,58 @@
+body {
+  background-color: black;
+  color: white;
+}
+
+div.container {
+  background-color: #333;
+  color:white;
+}
+
+div.flash {
+  position:absolute;
+  top:0;
+  right:0;
+  font-weight:bold;
+  color:white;
+}
+
+div.flash_error {
+  background: #812000;
+} 
+
+div.flash_notice {
+  background: #008148;
+}
+
+ul.menu{
+  border-bottom: 1px white solid;
+  color: white;
+  font-family: "Arial";
+  font-size: 18px;
+  text-align: right;
+  margin:0px;
+}
+
+ul.menu li{
+  color: white;
+  font-family: "Arial";
+  font-size: 18px;
+  display: inline;
+  list-style: none;
+  text-align:center;
+}
+
+ul.menu a{
+  color: white;
+  font-family: "Arial";
+  font-size: 15px;
+  font-weight: normal;
+  text-decoration: none;
+}
+
+ul.menu a:hover, a.selected{
+}
+
+div.navigation {
+  margin:0px;
+}

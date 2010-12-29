@@ -1,32 +1,18 @@
-<h1>News</h1>
+<h2>News</h2>
 <% if can? :new, Post %>
     <%= link_to "New post", new_post_path %>
 <% end %>
 
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Body</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
 <% @posts.each do |post| %>
-  <tr>
-    <td><%= post.title %></td>
-    <td><%= post.body %></td>
-    <td><%= link_to 'Show', post %></td>
+  <div class="post">
+    <h3><%= post.title %></h3>
     <% if can? :edit, post %>
         <%= link_to "|Edit|", edit_post_path(post) %>
     <% end %>
     <% if can? :delete, post %>
         <%= link_to '|Delete|', post, :confirm => 'Are you sure?', :method => :delete %>
     <% end %>
-  </tr>
+    <p><%= RedCloth.new(post.body).to_html %></p>
+    <%= link_to 'Show', post %>
+  </div>
 <% end %>
-</table>
-
-<br />
-
-<%= link_to 'New Post', new_post_path %>
