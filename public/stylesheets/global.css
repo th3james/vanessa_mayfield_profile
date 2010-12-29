@@ -30,7 +30,8 @@ ul.menu{
   font-family: "Arial";
   font-size: 18px;
   text-align: right;
-  margin:0px;
+  padding: 0px;
+  margin-bottom:0px;
 }
 
 ul.menu li{
@@ -54,5 +55,8 @@ ul.menu a:hover, a.selected{
 }
 
 div.navigation {
-  margin:0px;
+}
+
+div.main_content {
+  background-color: #EEE;
 }
