@@ -3,8 +3,18 @@ body {
   color: white;
 }
 
+h1 {
+  color: #01939A;
+  font-weight:normal;
+  font-style:italic;
+  font-family: "Lucida Console";
+
+  border-bottom: solid 1px #01939A;
+  padding-bottom: 5px;
+}
+
 div.container {
-  background-color: #333;
+  background-color: #222;
   color:white;
 }
 
@@ -25,13 +35,14 @@ div.flash_notice {
 }
 
 ul.menu{
-  border-bottom: 1px white solid;
+  border-bottom: 1px #01939A solid;
   color: white;
   font-family: "Arial";
   font-size: 18px;
   text-align: right;
   padding: 0px;
   margin-bottom:0px;
+  margin-top:0px;
 }
 
 ul.menu li{

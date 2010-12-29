@@ -11,13 +11,13 @@
 <body>
   <div class="container clearfix">
     <div class="header grid_12">
-      <h1>Vanessa Mayfield - Online Portfolio</h1>
+      <h1>Vanessa Mayfield</h1>
     </div>
     <div class="navigation grid_12">
       <ul class="menu grid_12">
-        <li class="grid_4"><%= link_to "News", posts_path %></li>
-        <li class="grid_4"><%= link_to "Portfolio", '#' %></li>
-        <li class="grid_4"><%= link_to "Links", '#' %></li>
+        <li class="grid_4"><%= link_to "news", posts_path %></li>
+        <li class="grid_4"><%= link_to "portfolio", '#' %></li>
+        <li class="grid_4"><%= link_to "links", '#' %></li>
         <% if current_user %>
           <li class="grid_4"><%= link_to "Logout", logout_path %></li>
         <% end %>
