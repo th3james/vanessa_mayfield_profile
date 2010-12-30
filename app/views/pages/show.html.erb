@@ -4,6 +4,7 @@
 
 <%= @page.body %>
 
-
-<%= link_to 'Edit', edit_page_path(@page) %> |
-<%= link_to 'Back', pages_path %>
+<% if can? :edit, @page %>
+  <%= link_to 'Edit', edit_page_path(@page) %> |
+  <%= link_to 'View Pages', pages_path %>
+<% end %>

@@ -70,3 +70,10 @@ Feature: Manage pages
     When I go to the index page for pages
     And I follow "Destroy"
     Then I should not see "Page to delete"
+
+  Scenario: View a page as a user
+    Given a page exists with title: "Super page", body: "T'body"
+    When I go to the show page for that page
+    Then I should see "Super page"
+    And I should see "T'body"
+    And I should not see "Edit"
