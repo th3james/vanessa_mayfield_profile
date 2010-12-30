@@ -15,8 +15,17 @@ h1 {
   margin-bottom: 0px;
 }
 
-p.subheader {
-  margin-top: 0px;
+ul.subhead_list {
+  margin:0px;
+  padding:0px;
+}
+
+ul.subhead_list li{
+  font-size: 14px;
+  display: inline;
+  list-style: none;
+  text-align:center;
+  margin-left:70px;
 }
 
 div.container {
