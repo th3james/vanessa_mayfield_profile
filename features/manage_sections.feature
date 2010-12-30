@@ -49,3 +49,24 @@ Feature: Manage pages
     Then I should see "Body of page"
     And I should see "New Page"
     And I should be on the show page for that page
+
+  Scenario: Edit a page
+    Given I have no pages
+    And a page exists with title: "Old title", body: "hats"
+    And the admin user exists
+    And I am logged in as that user
+    When I go to the index page for pages
+    And I follow "Edit"
+    And I fill in "Title" with "New Title"
+    And I press "Update"
+    Then I should see "New Title"
+    Then I should not see "Old title"
+
+  Scenario: Delete a page
+    Given I have no pages
+    And a page exists with title: "Post to delete"
+    And the admin user exists
+    And I am logged in as that user
+    When I go to the index page for pages
+    And I follow "Destroy"
+    Then I should not see "Page to delete"
