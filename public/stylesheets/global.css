@@ -8,9 +8,15 @@ h1 {
   font-weight:normal;
   font-style:italic;
   font-family: "Lucida Console";
+  font-size: 5em;
 
   border-bottom: solid 1px #62C2EF;
-  padding-bottom: 7px;
+  padding-bottom: 15px;
+  margin-bottom: 0px;
+}
+
+p.subheader {
+  margin-top: 0px;
 }
 
 div.container {
