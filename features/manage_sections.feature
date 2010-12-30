@@ -72,8 +72,8 @@ Feature: Manage pages
     Then I should not see "Page to delete"
 
   Scenario: View a page as a user
-    Given a page exists with title: "Super page", body: "T'body"
+    Given a page exists with title: "Super page", body: "The body"
     When I go to the show page for that page
     Then I should see "Super page"
-    And I should see "T'body"
+    And I should see "The body"
     And I should not see "Edit"
