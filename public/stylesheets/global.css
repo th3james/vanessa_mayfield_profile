@@ -15,6 +15,17 @@ h1 {
   margin-bottom: 0px;
 }
 
+h3 {
+  font-weight:bold;
+  font-family: "Lucida Console";
+  font-size: 1.5em;
+
+  border-bottom: solid 1px #000;
+  padding-bottom: 5px;
+  margin-bottom: 0px;
+  margin-top: 0px;
+}
+
 ul.subhead_list {
   margin:0px;
   padding:0px;
@@ -25,7 +36,7 @@ ul.subhead_list li{
   display: inline;
   list-style: none;
   text-align:center;
-  margin-left:70px;
+  margin-left:75px;
 }
 
 div.container {
@@ -87,4 +98,11 @@ div.content_container {
 
 div.side_panel {
   border: solid 1px black;
+}
+
+div.content_cell {
+  background-color: #FFF;
+  border: solid 1px #888;
+
+  padding:10px;
 }
