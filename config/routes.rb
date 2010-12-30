@@ -1,5 +1,7 @@
 VanessaMayfieldProfile::Application.routes.draw do
 
+  resources :pages
+
   root :to => "posts#index"
 
   match 'login' => 'user_sessions#new'

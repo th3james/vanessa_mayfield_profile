@@ -16,14 +16,14 @@ Feature: Manage posts
 
   Scenario: Non logged in user should not see logout and new post
     When I go to the index page for posts
-    Then I should not see "Logout"
+    Then I should not see "logout"
     And I should not see "New post"
 
   Scenario: Admin user should see create new post link
     Given the admin user exists
     And I am logged in as that user
     When I go to the index page for posts
-    Then I should see "Logout"
+    Then I should see "logout"
     And I should see "New post"
 
   Scenario: Admin user should be able to create new news posts

@@ -13,13 +13,20 @@
     <div class="header grid_12">
       <h1>Vanessa Mayfield</h1>
     </div>
+    <div class="flash">
+      <%= flash[:error] %>
+    </div>
     <div class="navigation grid_12">
       <ul class="menu grid_12">
         <li class="grid_4"><%= link_to "news", posts_path %></li>
-        <li class="grid_4"><%= link_to "portfolio", '#' %></li>
-        <li class="grid_4"><%= link_to "links", '#' %></li>
+        <% @pages.each do |page| %>
+          <li class="grid_4"><%= link_to page.title, page %></li>
+        <% end %>
         <% if current_user %>
-          <li class="grid_4"><%= link_to "Logout", logout_path %></li>
+          <li class="grid_4"><%= link_to "logout", logout_path %></li>
+          <% if can? :create, Page %>
+            <li class="grid_4"><%= link_to "page admin", pages_path %></li>
+          <% end %>
         <% end %>
       </ul>
     </div>
@@ -29,7 +36,7 @@
         <%= yield %>
       </div>
       <div class="side_panel grid_4" >
-
+        TWITTAR STUFF AND THAT GOES HERE YEAH?
       </div>
     </div>
   </div>

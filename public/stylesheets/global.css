@@ -4,18 +4,17 @@ body {
 }
 
 h1 {
-  color: #01939A;
+  color: #62C2EF;
   font-weight:normal;
   font-style:italic;
   font-family: "Lucida Console";
 
-  border-bottom: solid 1px #01939A;
+  border-bottom: solid 1px #62C2EF;
   padding-bottom: 7px;
 }
 
 div.container {
-  background-color: #222;
-  color:white;
+  background-color: #221E1F;
 }
 
 div.flash {
@@ -68,6 +67,7 @@ ul.menu a:hover, a.selected{
 div.content_container {
   background-color: #EEE;
   padding-top: 20px;
+  color:black;
 }
 
 div.side_panel {
