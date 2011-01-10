@@ -15,6 +15,21 @@ h1 {
   margin-bottom: 0px;
 }
 
+h2 {
+  background-color: #A39543;
+  color: white;
+  
+  padding: 10px;
+  margin: 0px;
+
+  -webkit-border-top-left-radius: 5px;
+  -webkit-border-top-right-radius: 5px;
+  -moz-border-radius-topleft: 5px;
+  -moz-border-radius-topright: 5px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
 h3 {
   font-weight:bold;
   font-family: "Lucida Console";
@@ -91,7 +106,7 @@ ul.menu a:hover, a.selected{
 }
 
 div.content_container {
-  background-color: #EEE;
+  background-color: #AAAAAA;
   padding-top: 20px;
   color:black;
 }
@@ -106,4 +121,29 @@ div.content_cell {
 
   padding:10px;
   margin-bottom:10px;
+}
+
+p.notice {
+  margin:0px;
+}
+
+div.content_body {
+  background-color: #FFFFFF;
+  color: black;
+
+  border: solid 1px #CCCCCC;
+
+  padding:2px 10px;
+
+  -webkit-border-bottom-right-radius: 5px;
+  -webkit-border-bottom-left-radius: 5px;
+  -moz-border-radius-bottomright: 5px;
+  -moz-border-radius-bottomleft: 5px;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+
+}
+
+div.navigation {
+  background-color: #4385A3;
 }
