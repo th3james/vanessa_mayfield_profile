@@ -40,11 +40,42 @@
     </div>
 
     <div class="content_container grid_12">
-      <div class="main_content grid_8" >
+      <div class="main_content grid_9" >
         <%= yield %>
       </div>
-      <div class="side_panel grid_4" >
-        TWITTAR STUFF AND THAT GOES HERE YEAH?
+      <div class=" grid_3" >
+        <script src="http://widgets.twimg.com/j/2/widget.js"></script>
+        <script>
+        new TWTR.Widget({
+          version: 2,
+          type: 'profile',
+          rpp: 4,
+          interval: 6000,
+          width: 280,
+          height: 300,
+          theme: {
+            shell: {
+              background: '#000000',
+              color: '#FFFFFF'
+            },
+            tweets: {
+              background: '#333333',
+              color: '#FFFFFF',
+              links: '#62c2ef'
+            }
+          },
+          features: {
+            scrollbar: false,
+            loop: false,
+            live: false,
+            hashtags: true,
+            timestamp: true,
+            avatars: false,
+            behavior: 'all'
+          }
+        }).render().setUser('vanessamayfield').start();
+        </script>
+                
       </div>
     </div>
   </div>
