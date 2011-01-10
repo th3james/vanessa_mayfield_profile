@@ -26,14 +26,14 @@
     </div>
     <div class="navigation grid_12">
       <ul class="menu grid_12">
-        <li class="grid_4"><%= link_to "News", posts_path %></li>
+        <li class="grid_2"><%= link_to "News", posts_path %></li>
         <% @pages.each do |page| %>
-          <li class="grid_4"><%= link_to page.title, page %></li>
+          <li class="grid_2"><%= link_to page.title, page %></li>
         <% end %>
         <% if current_user %>
-          <li class="grid_4"><%= link_to "logout", logout_path %></li>
+          <li class="grid_3"><%= link_to "Logout", logout_path %></li>
           <% if can? :create, Page %>
-            <li class="grid_4"><%= link_to "page admin", pages_path %></li>
+            <li class="grid_3"><%= link_to "Page Admin", pages_path %></li>
           <% end %>
         <% end %>
       </ul>
@@ -55,7 +55,7 @@
           height: 300,
           theme: {
             shell: {
-              background: '#A39543',
+              background: '#4385A3',
               color: '#FFFFFF'
             },
             tweets: {
