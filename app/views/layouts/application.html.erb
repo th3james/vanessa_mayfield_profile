@@ -23,22 +23,20 @@
           <%= flash[:error] %>
         </div>
 
-        <div class="navigation grid_12">
-          <ul class="menu grid_12">
-            <li class="grid_1"></li>
-            <li class="grid_2"><%= link_to "News", posts_path %></li>
-            <% @pages.each do |page| %>
-              <li class="grid_2"><%= link_to page.title, page %></li>
+        <ul class="navigation menu grid_12">
+          <li class="grid_1"></li>
+          <li class="grid_2"><%= link_to "News", posts_path %></li>
+          <% @pages.each do |page| %>
+            <li class="grid_2"><%= link_to page.title, page %></li>
+          <% end %>
+          <% if current_user %>
+            <li class="grid_3"><%= link_to "Logout", logout_path %></li>
+            <% if can? :create, Page %>
+              <li class="grid_3"><%= link_to "Page Admin", pages_path %></li>
             <% end %>
-            <% if current_user %>
-              <li class="grid_3"><%= link_to "Logout", logout_path %></li>
-              <% if can? :create, Page %>
-                <li class="grid_3"><%= link_to "Page Admin", pages_path %></li>
-              <% end %>
-            <% end %>
-            <li class="grid_1"></li>
-          </ul>
-        </div>
+          <% end %>
+          <li class="grid_1"></li>
+        </ul>
 
       </div>
       <div class="grid_4">
@@ -47,10 +45,14 @@
     </div>
 
     <div class="content_container grid_12">
-        <div class="main_content grid_8" >
-          <%= yield %>
+      <div class="grid_8" >
+        <div class="main_content grid_12" >
+          <div class="grid_12" >
+            <%= yield %>
+          </div>
         </div>
-      <div class="grid_4">
+      </div>
+      <div class="grid_4 twittar">
 
         <div>
           <script src="http://widgets.twimg.com/j/2/widget.js"></script>
@@ -64,13 +66,13 @@
             height: 300,
             theme: {
               shell: {
-                background: '#8D9FB4',
-                color: '#FFFFFF'
+                background: '#C3BACF',
+                color: '#442A67'
               },
               tweets: {
                 background: '#FFFFFF',
                 color: '#000000',
-                links: '#62c2ef'
+                links: '#8E819F'
               }
             },
             features: {
