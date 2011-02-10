@@ -12,7 +12,7 @@ h1 {
 
   border-bottom: solid 1px #62C2EF;
   padding-bottom: 15px;
-  margin-bottom: 0px;
+  margin-bottom: 15px;
 }
 
 h2 {
@@ -79,7 +79,7 @@ ul.menu{
   font-family: "Arial";
   font-size: 18px;
   text-align: right;
-  padding: 5px;
+  padding: 15px 0px;
   margin-bottom:0px;
   margin-top:0px;
 }
@@ -87,7 +87,8 @@ ul.menu{
 ul.menu li{
   color: white;
   font-family: "Arial";
-  font-size: 18px;
+  font-weight: bold;
+  font-size: 25px;
   display: inline;
   list-style: none;
   text-align:center;
@@ -146,11 +147,6 @@ div.content_body {
 div.navigation {
   background-color: #8E819F;
 
-  -webkit-border-radius: 5px;
-  -webkit-border-top-right-radius: 0;
-  -moz-border-radius: 5px;
-  -moz-border-radius-topright: 0;
-  border-radius: 5px;
-  border-top-right-radius: 0;
-  
+  margin-top: 130px;
+  margin-bottom: 15px ;
 }

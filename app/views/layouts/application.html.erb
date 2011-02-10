@@ -11,71 +11,81 @@
 <body>
   <div class="container clearfix">
     <div class="header grid_12">
-      <div style="float:left;width:84%;">
+      <div class="grid_8">
         <h1>Vanessa Mayfield</h1>
         <ul class="subhead_list">
           <li>actress</li>
           <li>dancer</li>
           <li>singer</li>
         </ul>
+
+        <div class="flash">
+          <%= flash[:error] %>
+        </div>
+
+        <div class="navigation grid_12">
+          <ul class="menu grid_12">
+            <li class="grid_1"></li>
+            <li class="grid_2"><%= link_to "News", posts_path %></li>
+            <% @pages.each do |page| %>
+              <li class="grid_2"><%= link_to page.title, page %></li>
+            <% end %>
+            <% if current_user %>
+              <li class="grid_3"><%= link_to "Logout", logout_path %></li>
+              <% if can? :create, Page %>
+                <li class="grid_3"><%= link_to "Page Admin", pages_path %></li>
+              <% end %>
+            <% end %>
+            <li class="grid_1"></li>
+          </ul>
+        </div>
+
       </div>
-      <%= image_tag 'vanessamayfield-header.jpg', :style => "float:right;" %>
-    </div>
-    <div class="flash">
-      <%= flash[:error] %>
-    </div>
-    <div class="navigation grid_12">
-      <ul class="menu grid_12">
-        <li class="grid_2"><%= link_to "News", posts_path %></li>
-        <% @pages.each do |page| %>
-          <li class="grid_2"><%= link_to page.title, page %></li>
-        <% end %>
-        <% if current_user %>
-          <li class="grid_3"><%= link_to "Logout", logout_path %></li>
-          <% if can? :create, Page %>
-            <li class="grid_3"><%= link_to "Page Admin", pages_path %></li>
-          <% end %>
-        <% end %>
-      </ul>
+      <div class="grid_4">
+      <%= image_tag 'vanessamayfield-header.jpg', :style => "float:left;" %>
+      </div>
     </div>
 
     <div class="content_container grid_12">
-      <div class="main_content grid_9" >
-        <%= yield %>
-      </div>
-      <div class=" grid_3" >
-        <script src="http://widgets.twimg.com/j/2/widget.js"></script>
-        <script>
-        new TWTR.Widget({
-          version: 2,
-          type: 'profile',
-          rpp: 4,
-          interval: 6000,
-          width: 280,
-          height: 300,
-          theme: {
-            shell: {
-              background: '#8D9FB4',
-              color: '#FFFFFF'
+        <div class="main_content grid_8" >
+          <%= yield %>
+        </div>
+      <div class="grid_4">
+
+        <div>
+          <script src="http://widgets.twimg.com/j/2/widget.js"></script>
+          <script>
+          new TWTR.Widget({
+            version: 2,
+            type: 'profile',
+            rpp: 4,
+            interval: 6000,
+            width: 280,
+            height: 300,
+            theme: {
+              shell: {
+                background: '#8D9FB4',
+                color: '#FFFFFF'
+              },
+              tweets: {
+                background: '#FFFFFF',
+                color: '#000000',
+                links: '#62c2ef'
+              }
             },
-            tweets: {
-              background: '#FFFFFF',
-              color: '#000000',
-              links: '#62c2ef'
+            features: {
+              scrollbar: false,
+              loop: false,
+              live: false,
+              hashtags: true,
+              timestamp: true,
+              avatars: false,
+              behavior: 'all'
             }
-          },
-          features: {
-            scrollbar: false,
-            loop: false,
-            live: false,
-            hashtags: true,
-            timestamp: true,
-            avatars: false,
-            behavior: 'all'
-          }
-        }).render().setUser('vanessamayfield').start();
-        </script>
-                
+          }).render().setUser('vanessamayfield').start();
+          </script>
+                  
+        </div>
       </div>
     </div>
   </div>
