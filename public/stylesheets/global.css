@@ -16,7 +16,7 @@ h1 {
 }
 
 h2 {
-  background-color: #4385A3;
+  background-color: #8D9FB4;
   color: white;
   
   padding: 10px;
@@ -79,7 +79,7 @@ ul.menu{
   font-family: "Arial";
   font-size: 18px;
   text-align: right;
-  padding: 0px;
+  padding: 5px;
   margin-bottom:0px;
   margin-top:0px;
 }
@@ -105,7 +105,7 @@ ul.menu a:hover, a.selected{
 }
 
 div.content_container {
-  background-color: #AAAAAA;
+  background-color: #000;
   padding-top: 20px;
   color:black;
 }
@@ -144,5 +144,5 @@ div.content_body {
 }
 
 div.navigation {
-  background-color: #A39543;
+  background-color: #8E819F;
 }
