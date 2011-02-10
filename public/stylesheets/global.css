@@ -55,7 +55,7 @@ ul.subhead_list li{
 }
 
 div.container {
-  background-color: #221E1F;
+  background-color: #000;
 }
 
 div.flash {
@@ -145,4 +145,12 @@ div.content_body {
 
 div.navigation {
   background-color: #8E819F;
+
+  -webkit-border-radius: 5px;
+  -webkit-border-top-right-radius: 0;
+  -moz-border-radius: 5px;
+  -moz-border-radius-topright: 0;
+  border-radius: 5px;
+  border-top-right-radius: 0;
+  
 }
