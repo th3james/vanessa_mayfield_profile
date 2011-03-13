@@ -2,7 +2,6 @@ set :application, "vanessa_mayfield_profile"
 set :repository,  "git@github.com:th3james/vanessa_mayfield_profile.git"
 
 set :scm, :git
-set :branch, :master
 # Or: `accurev`, `bzr`, `cvs`, `darcs`, `git`, `mercurial`, `perforce`, `subversion` or `none`
 
 role :web, "77.235.60.163"                          # Your HTTP server, Apache/etc
