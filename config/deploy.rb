@@ -25,13 +25,24 @@ task :setup_production_database_configuration do
   postgres_password = Capistrano::CLI.password_prompt("Production PostGres password: ")
   require 'yaml'
   spec = { "production" => {
-                                   "adapter" => "postgresql",
-                                   "database" => 'vanessa_mayfield',
-                                   "username" => 'vanessa_mayfield',
-                                   "password" => postgres_password }}
+                         "adapter" => "postgresql",
+                         "database" => 'vanessa_mayfield',
+                         "username" => 'vanessa_mayfield',
+                         "password" => postgres_password }}
   run "mkdir -p #{shared_path}/config"
   put(spec.to_yaml, "#{shared_path}/config/database.yml")
 end
+
+task :create_sym_links do
+  run "(rm #{release_path}/config/database.yml && ln -s #{shared_path}/config/database.yml #{release_path}/config/database.yml) || echo 'not ready for this'"
+  run "(rm -rf #{release_path}/public/system && ln -s #{shared_path}/system #{release_path}/public/) || echo 'not ready for this'"
+end
+
+after "deploy:setup", :setup_production_database_configuration
+#after "deploy:setup", :create_private_folder, :create_system_and_headers_folder
+after "deploy:setup", :create_sym_links
+
+
 
 
 # If you are using Passenger mod_rails uncomment this:
