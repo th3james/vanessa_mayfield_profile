@@ -11,7 +11,7 @@ role :db,  "77.235.60.163", :primary => true # This is where Rails migrations wi
 
 set :user, "th3james"
 set :use_sudo, true
-set :runner, "th3james"
+set :runner, :user
 set :port, 30000
 
 set :deploy_to, "/var/www/#{application}"
@@ -19,6 +19,21 @@ set :deploy_via, :remote_cache
 
 
 default_run_options[:pty] = true # Must be set for the password prompt from git to work
+
+
+#task to run to link the database files properly
+task :setup_production_database_configuration do
+  postgres_password = Capistrano::CLI.password_prompt("Production PostGres password: ")
+  require 'yaml'
+  spec = { "production" => {
+                                   "adapter" => "postgresql",
+                                   "database" => 'vanessa_mayfield',
+                                   "username" => 'vanessa_mayfield',
+                                   "password" => postgres_password }}
+  run "mkdir -p #{shared_path}/config"
+  put(spec.to_yaml, "#{shared_path}/config/database.yml")
+end
+
 
 # If you are using Passenger mod_rails uncomment this:
 # if you're still using the script/reapear helper you will need
