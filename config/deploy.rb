@@ -40,7 +40,7 @@ end
 
 after "deploy:setup", :setup_production_database_configuration
 #after "deploy:setup", :create_private_folder, :create_system_and_headers_folder
-after "deploy:setup", :create_sym_links
+after "deploy", :create_sym_links
 
 
 
